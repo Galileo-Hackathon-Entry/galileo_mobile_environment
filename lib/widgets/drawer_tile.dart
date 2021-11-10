@@ -1,5 +1,5 @@
-import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:flutter/material.dart';
+import '../utilities/theme.dart';
 
 class DrawerTile extends StatelessWidget {
   final String title;
@@ -10,10 +10,10 @@ class DrawerTile extends StatelessWidget {
 
   DrawerTile(
       {this.title,
-        this.icon,
-        this.onTap,
-        this.isSelected = false,
-        this.iconColor = UIThemeColors.PRIMARY_COLOR});
+      this.icon,
+      this.onTap,
+      this.isSelected = false,
+      this.iconColor = UIThemeColors.text});
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +38,8 @@ class DrawerTile extends StatelessWidget {
             children: [
               Icon(icon,
                   size: 18,
-                  color:  isSelected
-                      ? Colors.white
-                      :  UIThemeColors.PRIMARY_COLOR),
+                  color:
+                      isSelected ? Colors.white : UIThemeColors.PRIMARY_COLOR),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: Text(title,
@@ -50,7 +49,7 @@ class DrawerTile extends StatelessWidget {
                         fontWeight: FontWeight.w200,
                         color: isSelected
                             ? Colors.white
-                            :  UIThemeColors.PRIMARY_COLOR)),
+                            : UIThemeColors.PRIMARY_COLOR)),
               )
             ],
           )),

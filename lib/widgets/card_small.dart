@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class CardSmall extends StatelessWidget {
@@ -71,3 +72,4 @@ class CardSmall extends StatelessWidget {
         ));
   }
 }
+*/

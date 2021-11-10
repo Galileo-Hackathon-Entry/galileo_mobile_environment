@@ -1,5 +1,5 @@
-import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:flutter/material.dart';
+import '../utilities/theme.dart';
 
 class NavbarBack extends StatefulWidget implements PreferredSizeWidget {
   final String title;
@@ -27,7 +27,7 @@ class _NavbarBackState extends State<NavbarBack> {
         margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0),
-          color: UIThemeColors.WHITE_COLOR1,
+          color: Colors.white,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,9 +46,9 @@ class _NavbarBackState extends State<NavbarBack> {
                 Text(
                   widget.title,
                   style: TextStyle(
-                    fontSize: 12.0,
-                    color: UIThemeColors.PRIMARY_COLOR,
-                  ),
+                      fontSize: 17.0,
+                      color: UIThemeColors.PRIMARY_COLOR,
+                      fontFamily: UIFontStyles.MONTSERRAT_REGULAR),
                 ),
               ],
             ),

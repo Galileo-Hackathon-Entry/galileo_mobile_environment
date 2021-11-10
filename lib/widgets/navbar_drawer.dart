@@ -1,8 +1,8 @@
-import 'package:galileo_hack_environment/utilities/asset_paths.dart';
-import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-
+import 'package:galileo_hack_environment/utilities/asset_paths.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import '../utilities/theme.dart';
 
 class Navbar extends StatefulWidget implements PreferredSizeWidget {
   final String title;
@@ -21,6 +21,7 @@ class Navbar extends StatefulWidget implements PreferredSizeWidget {
 class _NavbarState extends State<Navbar> {
   String activeTag;
 
+  ItemScrollController _scrollController = ItemScrollController();
 
   void initState() {
     super.initState();
@@ -47,12 +48,13 @@ class _NavbarState extends State<Navbar> {
                   Scaffold.of(context).openDrawer();
                 }),
             Container(
-                height: 25.0, child: Image.asset(ImagePath.ELEVATE_LOGO1)),
+                height: 60.0,
+                child: Image.asset(ImagePath.RECYCLE_ICON1)),
             IconButton(
               icon: Icon(
                 FontAwesome.bell,
                 color: UIThemeColors.PRIMARY_COLOR,
-              ),
+              ), onPressed: () {  },
             ),
           ],
         ),

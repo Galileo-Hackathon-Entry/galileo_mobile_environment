@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class CardSquare extends StatelessWidget {
@@ -67,3 +68,4 @@ class CardSquare extends StatelessWidget {
         ));
   }
 }
+*/

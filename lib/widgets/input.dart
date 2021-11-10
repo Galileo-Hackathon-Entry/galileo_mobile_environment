@@ -1,5 +1,6 @@
-import 'package:galileo_hack_environment/utilities/theme.dart';
+/*
 import 'package:flutter/material.dart';
+import '../utilities/theme.dart';
 
 class Input extends StatelessWidget {
   final String placeholder;
@@ -18,25 +19,25 @@ class Input extends StatelessWidget {
       this.onTap,
       this.onChanged,
       this.autofocus = false,
-      this.borderColor = UIThemeColors.PRIMARY_COLOR,
+      this.borderColor = UIThemeColors.border,
       this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-        cursorColor: UIThemeColors.PRIMARY_COLOR,
+        cursorColor: UIThemeColors.muted,
         onTap: onTap,
         onChanged: onChanged,
         controller: controller,
         autofocus: autofocus,
-        style: TextStyle(
-            height: 0.55, fontSize: 13.0, color: UIThemeColors.PRIMARY_COLOR),
+        style:
+            TextStyle(height: 0.55, fontSize: 13.0, color: UIThemeColors.time),
         textAlignVertical: TextAlignVertical(y: 0.6),
         decoration: InputDecoration(
             filled: true,
-            fillColor: UIThemeColors.PRIMARY_COLOR,
+            fillColor: UIThemeColors.white,
             hintStyle: TextStyle(
-              color: UIThemeColors.PRIMARY_COLOR,
+              color: UIThemeColors.time,
             ),
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
@@ -51,3 +52,4 @@ class Input extends StatelessWidget {
             hintText: placeholder));
   }
 }
+*/

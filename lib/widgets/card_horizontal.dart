@@ -1,9 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:galileo_hack_environment/utilities/asset_paths.dart';
 
-
-class CardHorizontal extends StatelessWidget {
+/*class CardHorizontal extends StatelessWidget {
   CardHorizontal(
       {this.title = "Placeholder Title",
       this.cta = "",
@@ -47,20 +44,19 @@ class CardHorizontal extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
-                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("John Rev R. Puno, 22",
                               style: TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold)),
+                                  fontSize: 14.0, fontWeight: FontWeight.bold)),
                           Row(
                             children: [
                               Icon(Icons.star, color: Colors.yellow),
                               Text("1")
                             ],
                           )
-                          /*Text(
+Text(
                               "\"Courage is not the absence of fear but the understanding that there is something more important that exist\"",
                               maxLines: 4,
                               overflow: TextOverflow.ellipsis,
@@ -71,7 +67,8 @@ class CardHorizontal extends StatelessWidget {
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.bold,
                                 fontStyle: FontStyle.italic,
-                              )),*/
+                              )),
+
                         ],
                       ),
                     ))
@@ -80,4 +77,4 @@ class CardHorizontal extends StatelessWidget {
           ),
         ));
   }
-}
+}*/
