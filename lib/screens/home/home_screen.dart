@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:galileo_hack_environment/screens/home/pages/feed_page_screen.dart';
 import 'package:galileo_hack_environment/screens/home/pages/map.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:galileo_hack_environment/widgets/drawer.dart';
@@ -18,11 +19,15 @@ class _HomeScreenState extends State<HomeScreen> {
   GlobalKey _bottomNavigationKey = GlobalKey();
 
   MapScreen _mapScreen = MapScreen();
+  FeedPageScreen _feedPageScreen = FeedPageScreen();
 
   Widget _showPage(int page) {
     switch (page) {
       case 0:
         return _mapScreen;
+        break;
+      case 2:
+        return _feedPageScreen;
         break;
       default:
         return Center(

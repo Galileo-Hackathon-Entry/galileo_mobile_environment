@@ -13,10 +13,8 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15.0),
-      child: SingleChildScrollView(
-        child: Container(
-
-        ),
+      child: Center(
+          child: Text("FEED SCREEN"),
       ),
     );
   }
