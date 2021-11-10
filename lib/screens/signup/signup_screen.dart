@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:galileo_hack_environment/screens/login/login_screen.dart';
 import '../../widgets/bezier_container.dart';
 import '../login/login_screen_v2.dart';
 
@@ -85,8 +86,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _loginAccountLabel() {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
+        Navigator.pushNamed(context, LoginScreen.routeName);
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20),
