@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import '../../screens/signup/signup_screen.dart';
 import '../../widgets/bezier_container.dart';
@@ -276,3 +277,4 @@ class _LoginPageState extends State<LoginPage> {
     ));
   }
 }
+*/
