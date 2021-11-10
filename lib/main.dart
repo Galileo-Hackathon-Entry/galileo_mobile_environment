@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:galileo_hack_environment/screens/home/home_screen.dart';
-import 'package:galileo_hack_environment/screens/login/login_screen.dart';
+import 'package:galileo_hack_environment/screens/login/login_screen_v2.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 
 void main() {
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
         primaryColor: UIThemeColors.PRIMARY_COLOR,
         fontFamily: UIFontStyles.MONTSERRAT_REGULAR,
       ),
-      home: LoginScreen(),
+      home: LoginPage(),
       routes: {
-        LoginScreen.routeName: (context) => LoginScreen(),
+        // LoginScreen.routeName: (context) => LoginScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
       },
     );
