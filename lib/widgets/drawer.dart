@@ -50,8 +50,8 @@ class NowDrawer extends StatelessWidget {
                 )),*/
             UserAccountsDrawerHeader(
                 currentAccountPicture: Image.asset(ImagePath.MALE_ICON1),
-                accountName: Text("John Rev Puno"),
-                accountEmail: Text("puno.jrev@gmail.com")),
+                accountName: Text("John Doe"),
+                accountEmail: Text("johndoe@gmail.com")),
 
 
             Expanded(

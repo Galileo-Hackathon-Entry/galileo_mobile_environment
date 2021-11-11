@@ -48,13 +48,20 @@ class _NavbarState extends State<Navbar> {
                   Scaffold.of(context).openDrawer();
                 }),
             Container(
-                height: 60.0,
-                child: Image.asset(ImagePath.RECYCLE_ICON1)),
+                //height: 60.0,
+                child: Row(
+                  children: [
+                    //Text("T", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: UIThemeColors.PRIMARY_COLOR),),
+                    Text("Trash", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: Colors.black),),
+                    Text("Connect", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: UIThemeColors.PRIMARY_COLOR),),
+                  ],
+                )),
             IconButton(
               icon: Icon(
                 FontAwesome.bell,
                 color: UIThemeColors.PRIMARY_COLOR,
-              ), onPressed: () {  },
+              ),
+              onPressed: () {},
             ),
           ],
         ),

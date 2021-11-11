@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:galileo_hack_environment/screens/home/home_screen.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/home_screen.dart';
 import 'package:galileo_hack_environment/screens/signup/signup_screen.dart';
-import 'package:galileo_hack_environment/utilities/asset_paths.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:galileo_hack_environment/widgets/bezier_container.dart';
 
@@ -184,19 +182,32 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     Widget _title() {
-      return RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(text: 'T', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700, color: Colors.green[500]), children: [
-          TextSpan(
-            text: 'rash',
-            style: TextStyle(color: Colors.black, fontSize: 30),
+      return Container(
+          //height: 60.0,
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          //Text("T", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: UIThemeColors.PRIMARY_COLOR),),
+          Text(
+            "Trash",
+            style: TextStyle(
+              fontFamily: UIFontStyles.MONTSERRAT_BOLD,
+              fontWeight: FontWeight.w900,
+              fontSize: 30.0,
+              color: Colors.black,
+            ),
           ),
-          TextSpan(
-            text: 'Konek',
-            style: TextStyle(color: Colors.green[500], fontSize: 30),
+          Text(
+            "Connect",
+            style: TextStyle(
+              fontFamily: UIFontStyles.MONTSERRAT_BOLD,
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0,
+              color: UIThemeColors.PRIMARY_COLOR,
+            ),
           ),
-        ]),
-      );
+        ],
+      ));
     }
 
     Widget _emailPasswordWidget() {
@@ -224,7 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: <Widget>[
                   SizedBox(height: height * .2),
                   _title(),
-                  SizedBox(height: 50),
+                  SizedBox(height: 40),
                   _emailPasswordWidget(),
                   SizedBox(height: 20),
                   _submitButton(),
