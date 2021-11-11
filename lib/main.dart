@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:galileo_hack_environment/screens/home/home_screen.dart';
-import 'package:galileo_hack_environment/screens/home/pages/donation_page_screen.dart';
-import 'package:galileo_hack_environment/screens/home/pages/feed_page_screen.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/home_screen.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donation_page_screen.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/pages/feed_page_screen.dart';
 import 'package:galileo_hack_environment/screens/login/login_screen.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 
@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+
         primaryColor: UIThemeColors.PRIMARY_COLOR,
         fontFamily: UIFontStyles.MONTSERRAT_REGULAR,
       ),
