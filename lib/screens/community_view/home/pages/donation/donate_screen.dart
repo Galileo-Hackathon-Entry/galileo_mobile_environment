@@ -56,8 +56,16 @@ class _DonateScreenState extends State<DonateScreen> {
                             Expanded(
                               flex: 3,
                               child: _CustomTextField(
+                                labelText: "Minimum",
+                                initialValue: "50",
+                              ),
+                            ),
+                            SizedBox(width: 10.0),
+                            Expanded(
+                              flex: 3,
+                              child: _CustomTextField(
                                 labelText: "Count",
-                                initialValue: "10",
+                                initialValue: "50",
                               ),
                             ),
                             SizedBox(width: 10.0),

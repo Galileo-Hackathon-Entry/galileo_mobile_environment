@@ -40,21 +40,15 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                 SizedBox(height: 10.0),
                 _CardPost(
                   imagePath: "assets/images/johnrev_pic1.png",
-                  imagePicPost: "assets/images/feeding_program1.png",
+                  imagePicPost: ImagePath.CANS_PIC2,
                   name: "John Rev Puno",
-                  post: "Thank you for the feeding program opportunity.",
-                ),
-                _CardPost(
-                  imagePath: "assets/images/anthony_pic1.png",
-                  imagePicPost: ImagePath.COMMUNITY_PANTRY_PIC1,
-                  name: "Mark Anthony",
-                  post: "What if magset tayo ng commutiny pantry where people give what they can and get what they need?",
+                  post: "Donated Cans.",
                 ),
                 _CardPost(
                   imagePath:"assets/images/daryll_pic1.png",
-                  imagePicPost: ImagePath.LUGAW_LENI_PIC1,
-                  name: "Mark Anthony ",
-                  post: "Salamat sa mga nag donate sa Community Pantry.",
+                  imagePicPost: ImagePath.PLASTIC_BOTTLE_PIC3,
+                  name: "Daryll Ipsum",
+                  post: "Donated Bottled water.",
                 ),
                 /* _CardPost(
                   imagePath: ImagePath.JOHNREV_PIC1,
@@ -145,7 +139,7 @@ class _CardPost extends StatelessWidget {
                 child: Icon(FontAwesome.thumbs_up, color: UIThemeColors.PRIMARY_COLOR),
                 onPressed: () {},
               ),
-              Text("Like", style: TextStyle(fontSize: 18.0),),
+              Text("Like", style: TextStyle(fontSize: 14.0),),
               FlatButton(
                 child: Icon(
                   FontAwesome.comment_o,
@@ -153,7 +147,7 @@ class _CardPost extends StatelessWidget {
                 ),
                 onPressed: () {},
               ),
-              Text("Comment", style: TextStyle(fontSize: 18.0),),
+              Text("Comment", style: TextStyle(fontSize: 14.0),),
               SizedBox(width: 10.0),
             ],
           ),

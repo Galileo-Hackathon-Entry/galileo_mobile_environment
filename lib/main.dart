@@ -3,6 +3,7 @@ import 'package:galileo_hack_environment/screens/community_view/home/home_screen
 import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donate_screen.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donation_page_screen.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/feeds/feed_page_screen.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/pages/top_contributors/top_contributers_page_screen.dart';
 import 'package:galileo_hack_environment/screens/login/login_screen.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         DonationPageScreen.routeName: (context) => DonationPageScreen(),
         FeedPageScreen.routeName: (context) => FeedPageScreen(),
         DonateScreen.routeName: (context) => DonateScreen(),
+        TopContributorPageScreen.routeName: (context) => TopContributorPageScreen(),
       },
     );
   }

@@ -4,6 +4,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donation_page_screen.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/feeds/feed_page_screen.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/maps/map.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/pages/top_contributors/top_contributers_page_screen.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:galileo_hack_environment/widgets/drawer.dart';
 import 'package:galileo_hack_environment/widgets/navbar_drawer.dart';
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MapScreen _mapScreen = MapScreen();
   FeedPageScreen _feedPageScreen = FeedPageScreen();
   DonationPageScreen _donationPageScreen = DonationPageScreen();
+  TopContributorPageScreen _topContributorPageScreen = TopContributorPageScreen();
 
   Widget _showPage(int page) {
     switch (page) {
@@ -33,6 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
         break;
       case 2:
         return _feedPageScreen;
+        break;
+      case 4:
+        return _topContributorPageScreen;
         break;
       default:
         return Center(
