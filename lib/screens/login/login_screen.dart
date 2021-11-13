@@ -952,7 +952,7 @@ class _TextInput extends StatelessWidget {
 
 
 signIn (username, password, context) async {
-  var server = Uri.parse('http://10.0.2.2:3001/api/user/auth');
+  var server = Uri.parse('https://trashkonek.herokuapp.com/api/user/auth');
   final http.Response response = await http.post(server, headers: <String, String> {
     'Content-Type' : 'application/json; charset=UTF-8'
   },

@@ -219,7 +219,7 @@ signUp(email, password, confirmPassword, callback) async {
   }
   else {
     //Call HTTP
-    var server = Uri.parse('http://10.0.2.2:3001/api/user/register');
+    var server = Uri.parse('https://trashkonek.herokuapp.com/api/user/register');
     final http.Response response = await http.post(server, headers: <String, String> {
       'Content-Type' : 'application/json; charset=UTF-8'
     },
