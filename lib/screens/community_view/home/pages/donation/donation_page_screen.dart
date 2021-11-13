@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donate_screen.dart';
 import 'package:galileo_hack_environment/utilities/asset_paths.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -39,6 +40,9 @@ class _DonationPageScreenState extends State<DonationPageScreen> {
               statusInformation: "700 out of 1000 remaining.",
               date: "Nov 1, 2021 to Nov 20, 2021",
               percent: 0.30,
+              funcDonate: (){
+                Navigator.pushNamed(context, DonateScreen.routeName);
+              },
             ),
             _CardDonation(
               organization: "DENR",
@@ -49,6 +53,7 @@ class _DonationPageScreenState extends State<DonationPageScreen> {
               statusInformation: "500 out of 1000 remaining.",
               date: "Nov 20, 2021 to Dec 1, 2021",
               percent: 0.50,
+              funcDonate: (){},
             ),
             _CardDonation(
               organization: "Bazura Bags",
@@ -59,6 +64,7 @@ class _DonationPageScreenState extends State<DonationPageScreen> {
               statusInformation: "400 out of 2000 remaining.",
               date: "Dec 1, 2021 to Dec 31, 2021",
               percent: 0.80,
+              funcDonate: (){},
             ),
           ],
         ),
@@ -76,6 +82,7 @@ class _CardDonation extends StatelessWidget {
   final String contactPerson;
   final String description;
   final String statusInformation;
+  final Function funcDonate;
 
   _CardDonation({
     this.imagePath = ImagePath.PLASTIC_BOTTLE_PIC1,
@@ -86,6 +93,7 @@ class _CardDonation extends StatelessWidget {
     this.contactPerson = "",
     this.description = "",
     this.statusInformation = "",
+    this.funcDonate,
   });
 
   @override
@@ -185,7 +193,7 @@ class _CardDonation extends StatelessWidget {
                             style: TextStyle(fontSize: 13.0, color: Theme.of(context).primaryColor, fontStyle: FontStyle.italic),
                           ),
                         ),
-                        ElevatedButton(onPressed: () {}, child: Text("Donate"),
+                        ElevatedButton(onPressed: () => funcDonate(), child: Text("Donate"),
                           style: ElevatedButton.styleFrom(
                             primary: UIThemeColors.PRIMARY_COLOR,
                             onPrimary: Colors.white,

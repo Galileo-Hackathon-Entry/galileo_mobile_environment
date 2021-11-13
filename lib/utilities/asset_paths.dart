@@ -20,6 +20,7 @@ class ImagePath {
   static const String CALENDAR_ICON1 = "assets/images/calendar_icon1.png";
   static const String RECYCLE_ICON1 = "assets/images/recycle_icon1.png";
   static const String PLASTIC_BOTTLE_PIC1 = "assets/images/plastic_bottles_pic1.png";
+  static const String PLASTIC_BOTTLE_PIC2 = "assets/images/plastic_bottles_pic2.png";
   static const String CANS_PIC1 = "assets/images/cans_pic1.png";
   static const String JUICE_CONTAINER_PIC1 = "assets/images/juice_container_pic1.png";
 }
