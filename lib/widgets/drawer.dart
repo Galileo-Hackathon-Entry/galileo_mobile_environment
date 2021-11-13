@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:galileo_hack_environment/screens/login/login_screen.dart';
 import 'package:galileo_hack_environment/utilities/asset_paths.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:galileo_hack_environment/widgets/drawer_tile.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NowDrawer extends StatelessWidget {
   final String currentPage;
@@ -102,7 +104,7 @@ class NowDrawer extends StatelessWidget {
                   DrawerTile(
                       icon: FontAwesomeIcons.signOutAlt,
                       onTap: () {
-                        /*Navigator.pushReplacementNamed(context, LoginScreen.routeName);*/
+                        logout(context);
                       },
                       iconColor: UIThemeColors.warning,
                       title: "Logout",
@@ -148,4 +150,11 @@ class NowDrawer extends StatelessWidget {
           ]),
         ));
   }
+}
+
+logout(context) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.remove("token");
+  prefs.remove("user_id");
+  Navigator.pushReplacementNamed(context, LoginScreen.routeName);
 }

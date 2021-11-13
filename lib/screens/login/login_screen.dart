@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/home_screen.dart';
 import 'package:galileo_hack_environment/screens/signup/signup_screen.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
 import 'package:galileo_hack_environment/widgets/bezier_container.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   static final routeName = "/login_screen";
@@ -16,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _conUserName = TextEditingController();
   TextEditingController _conPassword = TextEditingController();
   bool _showPassword = false;
+  var regDetails = {'email': '', 'password': ''};
 
   @override
   void initState() {
@@ -24,6 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    checkIfLoggedIn(context);
+
     Widget _backButton() {
       return InkWell(
         onTap: () {
@@ -44,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     }
 
-    Widget _entryField(String title, {bool isPassword = false}) {
+    Widget _entryField(String title, String key, {bool isPassword = false}) {
       return Container(
         margin: EdgeInsets.symmetric(vertical: 10),
         child: Column(
@@ -58,15 +66,20 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 10,
             ),
             TextField(
+                onChanged: (value) {
+                  regDetails[key] = value;
+                },
                 obscureText: isPassword, decoration: InputDecoration(border: InputBorder.none, fillColor: Color(0xfff3f3f4), filled: true))
           ],
         ),
       );
     }
 
-    Widget _submitButton() {
+    Widget _submitButton(context) {
       return new GestureDetector(
-          onTap: () => {Navigator.of(context).pushNamed(HomeScreen.routeName)},
+          onTap: () => {
+            signIn(regDetails['email'], regDetails['password'], context)
+          },
           child: new Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.symmetric(vertical: 15),
@@ -213,8 +226,8 @@ class _LoginScreenState extends State<LoginScreen> {
     Widget _emailPasswordWidget() {
       return Column(
         children: <Widget>[
-          _entryField("Email"),
-          _entryField("Password", isPassword: true),
+          _entryField("Email", 'email'),
+          _entryField("Password", 'password', isPassword: true),
         ],
       );
     }
@@ -238,7 +251,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 40),
                   _emailPasswordWidget(),
                   SizedBox(height: 20),
-                  _submitButton(),
+                  _submitButton(context),
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     alignment: Alignment.centerRight,
@@ -448,5 +461,35 @@ class _TextInput extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.0), borderSide: BorderSide(color: borderColor, width: 1.0, style: BorderStyle.solid)),
             hintText: placeholder));
+  }
+}
+
+
+signIn (username, password, context) async {
+  var server = Uri.parse('http://10.0.2.2:3001/api/user/auth');
+  final http.Response response = await http.post(server, headers: <String, String> {
+    'Content-Type' : 'application/json; charset=UTF-8'
+  },
+  body: jsonEncode(<String, String>{
+    'email' : username,
+    'password': password
+  }));
+
+  //please check the returned value, add alert dailog
+  var data = jsonDecode(response.body);
+
+  if(data['success'].toString() == 'true') {
+    print(data['user']['id']);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('token', data['token']);
+    prefs.setString('user_id', data['user']['id']);
+    Navigator.of(context).pushNamed(HomeScreen.routeName);
+  }
+}
+
+checkIfLoggedIn (context) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (prefs.getString("token").isNotEmpty) {
+    Navigator.of(context).pushNamed(HomeScreen.routeName);
   }
 }
