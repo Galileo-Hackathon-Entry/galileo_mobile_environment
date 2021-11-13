@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/home_screen.dart';
+import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donate_screen.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/donation/donation_page_screen.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/pages/feeds/feed_page_screen.dart';
 import 'package:galileo_hack_environment/screens/login/login_screen.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         DonationPageScreen.routeName: (context) => DonationPageScreen(),
         FeedPageScreen.routeName: (context) => FeedPageScreen(),
+        DonateScreen.routeName: (context) => DonateScreen(),
       },
     );
   }

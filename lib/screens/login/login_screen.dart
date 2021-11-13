@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:galileo_hack_environment/screens/community_view/home/home_screen.dart';
 import 'package:galileo_hack_environment/screens/signup/signup_screen.dart';
 import 'package:galileo_hack_environment/utilities/theme.dart';
@@ -223,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
         body: Container(
       height: height,
-      child: Stack(
+      child:Stack(
         children: <Widget>[
           Positioned(top: -height * .15, right: -MediaQuery.of(context).size.width * .4, child: BezierContainer()),
           Container(
@@ -256,6 +257,491 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
     ));
+  }
+}
+
+class CreateaccountWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Figma Flutter Generator CreateaccountWidget - FRAME
+    return Container(
+        width: double.infinity,
+        //height: 896,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
+          color: Color.fromRGBO(255, 255, 255, 1),
+        ),
+        child: Column(children: <Widget>[
+          //Positioned(top: 861.995849609375, left: 0, child: null),
+          /*Positioned(
+              top: 44,
+              left: 0,
+              child: Container(
+                decoration: BoxDecoration(),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    *//*Container(
+                      decoration: BoxDecoration(),
+                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                         // null,
+                        ],
+                      ),
+                    ),*//*
+                  ],
+                ),
+              )),*/
+          //Positioned(top: 0, left: 0, child: null),
+          Positioned(
+              top: 100,
+              left: 0,
+              child: Container(
+                decoration: BoxDecoration(),
+                padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(),
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          //null,
+                          SizedBox(height: 0),
+                          Text(
+                            'Create an account to connect and startrecycling today.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Color.fromRGBO(47, 72, 88, 1),
+                                fontFamily: 'SF Pro Text',
+                                fontSize: 16,
+                                letterSpacing: -0.3199999928474426,
+                                fontWeight: FontWeight.normal,
+                                height: 1.3125),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 24),
+                    Container(
+                      decoration: BoxDecoration(),
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(),
+                            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Container(
+                                  decoration: BoxDecoration(),
+                                  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Text(
+                                        'Email or Mobile Number',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(58, 58, 60, 1),
+                                            fontFamily: 'SF Pro Text',
+                                            fontSize: 13,
+                                            letterSpacing: -0.07800000160932541,
+                                            fontWeight: FontWeight.normal,
+                                            height: 1.3846153846153846),
+                                      ),
+                                      SizedBox(height: 4),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10),
+                                            bottomLeft: Radius.circular(10),
+                                            bottomRight: Radius.circular(10),
+                                          ),
+                                          color: Color.fromRGBO(255, 255, 255, 1),
+                                          border: Border.all(
+                                            color: Color.fromRGBO(216, 216, 220, 1),
+                                            width: 1,
+                                          ),
+                                        ),
+                                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 13),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: <Widget>[
+                                            Text(
+                                              'example@email.com',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Color.fromRGBO(174, 174, 178, 1),
+                                                  fontFamily: 'SF Pro Text',
+                                                  fontSize: 17,
+                                                  letterSpacing: -0.40799999237060547,
+                                                  fontWeight: FontWeight.normal,
+                                                  height: 1.2941176470588236),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 12),
+                                Container(
+                                  decoration: BoxDecoration(),
+                                  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Text(
+                                        'Password',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(58, 58, 60, 1),
+                                            fontFamily: 'SF Pro Text',
+                                            fontSize: 13,
+                                            letterSpacing: -0.07800000160932541,
+                                            fontWeight: FontWeight.normal,
+                                            height: 1.3846153846153846),
+                                      ),
+                                      SizedBox(height: 4),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10),
+                                            bottomLeft: Radius.circular(10),
+                                            bottomRight: Radius.circular(10),
+                                          ),
+                                          color: Color.fromRGBO(255, 255, 255, 1),
+                                          border: Border.all(
+                                            color: Color.fromRGBO(216, 216, 220, 1),
+                                            width: 1,
+                                          ),
+                                        ),
+                                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 13),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: <Widget>[
+                                            Text(
+                                              'Placeholder',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Color.fromRGBO(174, 174, 178, 1),
+                                                  fontFamily: 'SF Pro Text',
+                                                  fontSize: 17,
+                                                  letterSpacing: -0.40799999237060547,
+                                                  fontWeight: FontWeight.normal,
+                                                  height: 1.2941176470588236),
+                                            ),
+                                            SizedBox(width: 10),
+                                            Container(
+                                                width: 24,
+                                                height: 24,
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(255, 255, 255, 1),
+                                                ),
+                                                child: Stack(children: <Widget>[
+                                                  Positioned(
+                                                      top: 5,
+                                                      left: 2.3871960639953613,
+                                                      child: Container(
+                                                          width: 19.225303649902344,
+                                                          height: 14,
+                                                          child: Stack(children: <Widget>[
+                                                            Positioned(
+                                                              top: 0,
+                                                              left: 0,
+                                                              child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                                            ),
+                                                            Positioned(
+                                                              top: 4,
+                                                              left: 6.612803936004639,
+                                                              child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                                            ),
+                                                          ]))),
+                                                ])),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 16),
+                          Container(
+                            decoration: BoxDecoration(),
+                            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(14),
+                                      topRight: Radius.circular(14),
+                                      bottomLeft: Radius.circular(14),
+                                      bottomRight: Radius.circular(14),
+                                    ),
+                                    color: Color.fromRGBO(1, 130, 86, 1),
+                                  ),
+                                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 13),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Text(
+                                        'Next',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(255, 255, 255, 1),
+                                            fontFamily: 'SF Pro Text',
+                                            fontSize: 17,
+                                            letterSpacing: -0.40799999237060547,
+                                            fontWeight: FontWeight.normal,
+                                            height: 1.2941176470588236),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+          Positioned(
+              top: 490.65045166015625,
+              left: 16,
+              child: Container(
+                decoration: BoxDecoration(),
+                padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Divider(color: Color.fromRGBO(209, 209, 214, 1), thickness: 1),
+                    SizedBox(width: 9),
+                    Text(
+                      'Or ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Color.fromRGBO(47, 72, 88, 1),
+                          fontFamily: 'SF Pro Text',
+                          fontSize: 13,
+                          letterSpacing: -0.07800000160932541,
+                          fontWeight: FontWeight.normal,
+                          height: 1.3846153846153846),
+                    ),
+                    SizedBox(width: 9),
+                    Divider(color: Color.fromRGBO(209, 209, 214, 1), thickness: 1),
+                  ],
+                ),
+              )),
+          Positioned(
+              top: 532.6504516601562,
+              left: 0,
+              child: Container(
+                decoration: BoxDecoration(),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(),
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(14),
+                                topRight: Radius.circular(14),
+                                bottomLeft: Radius.circular(14),
+                                bottomRight: Radius.circular(14),
+                              ),
+                              color: Color.fromRGBO(28, 28, 30, 1),
+                              border: Border.all(
+                                color: Color.fromRGBO(25, 118, 210, 1),
+                                width: 1,
+                              ),
+                            ),
+                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 13),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Container(
+                                    width: 24,
+                                    height: 24,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(255, 255, 255, 1),
+                                    ),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                          top: -0.000010519380339246709,
+                                          left: 2.2501111030578613,
+                                          child: Container(
+                                              width: 19.49995231628418,
+                                              height: 24.0001220703125,
+                                              child: Stack(children: <Widget>[
+                                                Positioned(
+                                                  top: 0,
+                                                  left: 0,
+                                                  child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                                ),
+                                                Positioned(
+                                                  top: 0,
+                                                  left: 0,
+                                                  child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                                ),
+                                              ]))),
+                                    ])),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Sign Up with Apple',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(255, 255, 255, 1),
+                                      fontFamily: 'SF Pro Text',
+                                      fontSize: 17,
+                                      letterSpacing: -0.40799999237060547,
+                                      fontWeight: FontWeight.normal,
+                                      height: 1.2941176470588236),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(14),
+                                topRight: Radius.circular(14),
+                                bottomLeft: Radius.circular(14),
+                                bottomRight: Radius.circular(14),
+                              ),
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              border: Border.all(
+                                color: Color.fromRGBO(25, 118, 210, 1),
+                                width: 1,
+                              ),
+                            ),
+                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 13),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Container(
+                                    width: 24,
+                                    height: 24,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(255, 255, 255, 1),
+                                    ),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                        top: 2,
+                                        left: 2,
+                                        child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                      ),
+                                      Positioned(
+                                        top: 2,
+                                        left: 3.1530001163482666,
+                                        child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                      ),
+                                      Positioned(
+                                        top: 14.027000427246094,
+                                        left: 3.0975000858306885,
+                                        child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                      ),
+                                      Positioned(
+                                        top: 10,
+                                        left: 12,
+                                        child: SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                      ),
+                                    ])),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Sign Up with Google',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(25, 118, 210, 1),
+                                      fontFamily: 'SF Pro Text',
+                                      fontSize: 17,
+                                      letterSpacing: -0.40799999237060547,
+                                      fontWeight: FontWeight.normal,
+                                      height: 1.2941176470588236),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(14),
+                                topRight: Radius.circular(14),
+                                bottomLeft: Radius.circular(14),
+                                bottomRight: Radius.circular(14),
+                              ),
+                              color: Color.fromRGBO(25, 118, 210, 1),
+                              border: Border.all(
+                                color: Color.fromRGBO(25, 118, 210, 1),
+                                width: 1,
+                              ),
+                            ),
+                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 13),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Color.fromRGBO(27, 118, 242, 1),
+                                  ),
+                                  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      SvgPicture.asset('assets/images/vector.svg', semanticsLabel: 'vector'),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Sign Up with Facebook',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(255, 255, 255, 1),
+                                      fontFamily: 'SF Pro Text',
+                                      fontSize: 17,
+                                      letterSpacing: -0.40799999237060547,
+                                      fontWeight: FontWeight.normal,
+                                      height: 1.2941176470588236),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+        ]));
   }
 }
 
