@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:galileo_hack_environment/screens/login/login_screen.dart';
 import '../../widgets/bezier_container.dart';
-import '../login/login_screen_v2.dart';
+// import '../login/login_screen_v2.dart';
+import '../login/login_screen.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key, this.title}) : super(key: key);
@@ -13,6 +17,9 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
+  var regDetails = {'email': '', 'password': '', 'confirm_password' : ''};
+
   Widget _backButton() {
     return InkWell(
       onTap: () {
@@ -34,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Widget _entryField(String title, {bool isPassword = false}) {
+  Widget _entryField(String title, String key, {bool isPassword = false}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
@@ -48,6 +55,9 @@ class _SignUpPageState extends State<SignUpPage> {
             height: 10,
           ),
           TextField(
+              onChanged: (value) {
+                regDetails[key] = value;
+              },
               obscureText: isPassword,
               decoration: InputDecoration(
                   border: InputBorder.none,
@@ -59,28 +69,41 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _submitButton() {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 15),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.grey.shade200,
-                offset: Offset(2, 4),
-                blurRadius: 5,
-                spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.green[500], Colors.green[800]])),
-      child: Text(
-        'Register Now',
-        style: TextStyle(fontSize: 20, color: Colors.white),
+    return InkWell(
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 15),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  offset: Offset(2, 4),
+                  blurRadius: 5,
+                  spreadRadius: 2)
+            ],
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.green[500], Colors.green[800]])),
+        child: Text(
+          'Register Now',
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
       ),
-    );
+      onTap: () {
+        signUp(regDetails['email'], regDetails['password'], regDetails['confirm_password'], (result) {
+          if (result['success']) {
+            Navigator.of(context).pushNamed(LoginScreen.routeName);
+          }
+
+          //TODO: PLEASE ADD ALERT DIALOG
+        });
+
+
+      },
+    );//inkwell
   }
 
   Widget _loginAccountLabel() {
@@ -138,9 +161,9 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
-        _entryField("Email"),
-        _entryField("Password", isPassword: true),
-        _entryField("Confirm Password", isPassword: true),
+        _entryField("Email", "email"),
+        _entryField("Password", "password", isPassword: true),
+        _entryField("Confirm Password", "confirm_password", isPassword: true),
       ],
     );
   }
@@ -187,4 +210,36 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
+}
+
+
+signUp(email, password, confirmPassword, callback) async {
+  if(password != confirmPassword) {
+    callback({'success': false, 'message': 'Password is not match'});
+  }
+  else {
+    //Call HTTP
+    var server = Uri.parse('https://trashkonek.herokuapp.com/api/user/register');
+    final http.Response response = await http.post(server, headers: <String, String> {
+      'Content-Type' : 'application/json; charset=UTF-8'
+    },
+        body: jsonEncode(<String, String>{
+          'email' : email,
+          'password': password
+        }));
+
+    if(response.statusCode == 500) {
+      callback({'success': false, 'message': 'An Error occured' });
+    }
+    else {
+      print(response.body);
+      print(response.statusCode);
+
+      var data = jsonDecode(response.body);
+      callback({'success': data['success'].toString().toLowerCase() == 'true', 'message': data['msg'] });
+    }
+
+  }
+
+
 }
